@@ -15,10 +15,14 @@ var instructorSchema = new Schema({
 var Instructor = mongoose.model('Instructor', instructorSchema);
 
 //Static Routes
-app.get('/', function(req, res) {
-  res.sendFile(__dirname + '/index.html');
+app.get('/default.js', function(req, res) {
+  res.sendFile(__dirname + '/default.js');
 });
 
-http.listen(8080, function(){
+app.get('/signup', function(req, res) {
+  res.sendFile(__dirname + '/signup.html');
+});
+
+app.listen(8080, function(){
   console.log('server live on port 8080');
 });
