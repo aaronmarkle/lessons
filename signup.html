@@ -4,17 +4,18 @@
   <title>Instructor Signup</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/api-check/7.5.5/api-check.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-formly/7.5.0/formly.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-formly-templates-bootstrap/6.2.0/angular-formly-templates-bootstrap.min.js"></script>
   <script src="default.js"></script>
 </head>
-<body ng-app="formlyApp" ng-controller="MainController as main">
+<body ng-app="formlyApp" ng-controller="MainController as vm">
   <div class="container col-md-6 col-md-offset-3">
     <form novalidate>
       <p class="h1">Instructor Signup</p>
-      <formly-form model="main.instructor" fields="main.instructorFields" form="main.instructorForm">
-        <button type="submit" class="btn btn-primary" ng-disabled="main.instructorForm.$invalid">Signup</button>
+      <formly-form model="vm.instructor" fields="vm.instructorFields" form="vm.instructorForm">
+        <button type="submit" class="btn btn-primary" ng-disabled="vm.instructorForm.$invalid">Signup</button>
       </formly-form>
     </form>
   </div>
