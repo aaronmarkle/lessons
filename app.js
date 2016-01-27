@@ -1,16 +1,18 @@
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
-var urlParser = bodyParser.urlencoded({ extended: false });
+var jsonParser = bodyParser.json();
 
 //Mongoose Configuration
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/lessons');
 var Schema = mongoose.Schema;
 var instructorSchema = new Schema({
-  name: String,
+  firstName: String,
+  lastName: String,
   email: String,
-  phone: String
+  phone: String,
+  beaches: String
 });
 var Instructor = mongoose.model('Instructor', instructorSchema);
 
@@ -19,8 +21,16 @@ app.get('/default.js', function(req, res) {
   res.sendFile(__dirname + '/default.js');
 });
 
+app.get('/style.css', function(req, res) {
+  res.sendFile(__dirname + '/style.css');
+});
+
 app.get('/signup', function(req, res) {
   res.sendFile(__dirname + '/signup.html');
+});
+
+app.post('/signup-submit', jsonParser, function(req, res) {
+  console.log(req.body);
 });
 
 app.listen(8080, function(){

@@ -1,29 +1,18 @@
 var app = angular.module('formlyApp', ['formly', 'formlyBootstrap']);
 
-app.controller('MainController', function(beach) {
+app.controller('MainController', function(beaches, $http) {
   var vm = this;
+  vm.processForm = function() {
+    $http.post('signup-submit', vm.instructor)
+      .success(function(data) {
+        console.log('form submitted');
+      });
+    console.log(vm.instructor);
+  }
+
+//Formly Config
   vm.instructor = {};
   vm.instructorFields = [
-    {
-      key: 'first_name',
-      type: 'input',
-      templateOptions: {
-        type: 'text',
-        label: 'First Name',
-        placeholder: 'Enter your first name',
-        required: true
-      }
-    },
-    {
-      key: 'last_name',
-      type: 'input',
-      templateOptions: {
-        type: 'text',
-        label: 'Last Name',
-        placeholder: 'Enter your last name',
-        required: true
-      }
-    },
     {
       key: 'email',
       type: 'input',
@@ -34,23 +23,63 @@ app.controller('MainController', function(beach) {
         required: true
       }
     },
+    {
+      key: 'firstName',
+      type: 'input',
+      templateOptions: {
+        type: 'text',
+        label: 'First Name',
+        placeholder: 'Enter your first name',
+        required: true
+      }
+    },
+    {
+      key: 'lastName',
+      type: 'input',
+      templateOptions: {
+        type: 'text',
+        label: 'Last Name',
+        placeholder: 'Enter your last name',
+        required: true
+      }
+    },
+    {
+      key: 'phone',
+      type: 'input',
+      templateOptions: {
+        type: 'text',
+        label: 'Phone:',
+        placeholder: 'Enter your phone number',
+        required: true
+      }
+    },
+    {
+      key: 'beaches',
+      type: 'select',
+      templateOptions: {
+        label: 'Beaches',
+        options: beaches.getBeaches(),
+        required: true
+      }
+    },
   ];
 });
 
-app.factory('beach', function() {
+//Services
+app.factory('beaches', function() {
   function getBeaches() {
     return [
       {
         "name": "Huntington Beach",
-        "value": "huntington"
+        "value": "Huntington Beach"
       },
       {
         "name": "Seal Beach",
-        "value": "seal"
+        "value": "Seal Beach"
       },
       {
         "name": "Newport Beach",
-        "value": "newport"
+        "value": "Newport Beach"
       }
     ];
   }
