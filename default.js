@@ -5,9 +5,8 @@ app.controller('MainController', function(beaches, $http) {
   vm.processForm = function() {
     $http.post('signup-submit', vm.instructor)
       .success(function(data) {
-        console.log('form submitted');
-      });
-    console.log(vm.instructor);
+        console.log('form successfully submitted');
+      })
   }
 
 //Formly Config
