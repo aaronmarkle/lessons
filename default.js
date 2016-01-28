@@ -2,7 +2,10 @@ app = angular.module('surfSearch', ['beachesModule']);
 app.controller('SearchController', function(beaches) {
   var vm = this;
   vm.options = beaches.getBeaches();
-  console.log(vm.options);
+  vm.selectedBeach = null;
+  vm.search = function() {
+    console.log(vm.selectedBeach + ' selected');
+  }
 });
 
 

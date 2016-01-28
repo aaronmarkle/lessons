@@ -12,11 +12,11 @@
     <div class="jumbotron">
       <p class="h1">Let's surf</p>
       <p class="h2">Pick a beach and see our available instructors</p>
-      <form name="beachSearch">
-        <select name="beachSelect" id="beachSelect" ng-model="vm.options" class="form-control">
+      <form name="beachSearch" ng-submit="vm.search()">
+        <select name="beachSelect" id="beachSelect" class="form-control" ng-model="vm.selectedBeach">
           <option ng-repeat="option in vm.options" value="{{option.value}}">{{option.name}}</option>
         </select>
-        <button class="btn btn-danger">Search</button>
+        <button type="submit" class="btn btn-primary">Search</button>
       </form>
     </div>
   </div>
