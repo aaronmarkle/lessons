@@ -89,6 +89,14 @@ app.factory('beaches', function() {
       {
         "name": "Newport Beach",
         "value": "Newport Beach"
+      },
+      {
+        "name": "Manhattan Beach",
+        "value": "Manhattan Beach"
+      },
+            {
+        "name": "Redondo Beach",
+        "value": "Redondo Beach"
       }
     ];
   }
