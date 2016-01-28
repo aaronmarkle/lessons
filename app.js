@@ -18,32 +18,7 @@ var instructorSchema = new Schema({
 var Instructor = mongoose.model('Instructor', instructorSchema);
 
 //Passport Configuration
-var passport = require('passport');
-var LocalStrategy = require('passport-local').Strategy;
-passport.use('local-signup', new LocalStrategy({passReqToCallback: true}, function(req, username, password, done) {
-  Instructor.findOne({'email': email}, function(err, user) {
-    if (err) {
-      return done(err);
-    }
-    if (user) {
-      return done(null, false, { message: 'Username is already taken.' });
-    } else {
-      var newInstructor = new Instructor();
-      newInstructor.email = email;
-      newInstructor.password = password;
-      newInstructor.firstName = firstName;
-      newInstructor.lastName = lastName;
-      newInstructor.phone = phone;
-      newInstructor.beaches = beaches;
-      newInstructor.save(function(err) {
-        if (err) {
-          throw err;
-        }
-        return done(null, newInstructor);
-      });
-    }
-  });
-}));
+
 
 //Static Routes
 app.get('/default.js', function(req, res) {
@@ -59,7 +34,6 @@ app.get('/signup', function(req, res) {
 });
 
 app.post('/signup-submit', jsonParser, function(req, res) {
-
   res.json(req.body);
 });
 

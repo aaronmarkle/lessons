@@ -5,7 +5,7 @@ app.controller('MainController', function(beaches, $http) {
   vm.processForm = function() {
     $http.post('signup-submit', vm.instructor)
       .success(function(data) {
-        console.log('form successfully submitted');
+        console.log(data);
       })
   }
 
@@ -19,6 +19,16 @@ app.controller('MainController', function(beaches, $http) {
         type: 'email',
         label: 'Email address',
         placeholder: 'Enter email',
+        required: true
+      }
+    },
+    {
+      key: 'password',
+      type: 'input',
+      templateOptions: {
+        type: 'password',
+        label: 'Password',
+        placeholder: 'Choose a password',
         required: true
       }
     },
