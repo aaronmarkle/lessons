@@ -65,7 +65,6 @@ app.post('/signup-submit', jsonParser, function(req, res) {
   res.json(req.body);
 });
 
-var port = process.env.PORT || 8080;
-app.listen(port, function(){
+app.listen((process.env.PORT || 8080), function(){
   console.log('server live on port 8080');
 });
