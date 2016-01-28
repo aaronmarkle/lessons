@@ -1,7 +1,8 @@
-app = angular.module('surfSearch', []);
-app.controller('SearchController', function() {
+app = angular.module('surfSearch', ['beachesModule']);
+app.controller('SearchController', function(beaches) {
   var vm = this;
-  vm.test = 'test';
+  vm.options = beaches.getBeaches();
+  console.log(vm.options);
 });
 
 
@@ -14,11 +15,8 @@ app.controller('SearchController', function() {
 
 
 
-
-
-
 //Signup form Module
-var formlyApp = angular.module('formlyApp', ['formly', 'formlyBootstrap']);
+var formlyApp = angular.module('formlyApp', ['formly', 'formlyBootstrap', 'beachesModule']);
 
 formlyApp.controller('MainController', function(beaches, $http) {
   var vm = this;
@@ -95,7 +93,7 @@ formlyApp.controller('MainController', function(beaches, $http) {
 });
 
 //Services
-formlyApp.factory('beaches', function() {
+angular.module('beachesModule', []).factory('beaches', function() {
   function getBeaches() {
     return [
       {

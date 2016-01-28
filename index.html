@@ -7,12 +7,17 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
   <script src="default.js"></script>
 </head>
-<body ng-app="surfSearch" ng-controller="SearchController">
+<body ng-app="surfSearch" ng-controller="SearchController as vm">
   <div class="container">
     <div class="jumbotron">
       <p class="h1">Let's surf</p>
       <p class="h2">Pick a beach and see our available instructors</p>
-
+      <form name="beachSearch">
+        <select name="beachSelect" id="beachSelect" ng-model="vm.options" class="form-control">
+          <option ng-repeat="option in vm.options" value="{{option.value}}">{{option.name}}</option>
+        </select>
+        <button class="btn btn-danger">Search</button>
+      </form>
     </div>
   </div>
 </body>

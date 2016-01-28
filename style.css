@@ -12,3 +12,7 @@
   background: url('main.jpg') no-repeat center center;
   background-size: cover;
 }
+
+#beachSelect {
+  max-width: 400px;
+}
