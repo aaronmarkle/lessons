@@ -14,6 +14,7 @@
       <p class="h2">Pick a beach and see our available instructors</p>
       <form name="beachSearch" ng-submit="vm.search()">
         <select name="beachSelect" id="beachSelect" class="form-control" ng-model="vm.selectedBeach">
+          <option value="" disabled selected>Choose a location</option>
           <option ng-repeat="option in vm.options" value="{{option.value}}">{{option.name}}</option>
         </select>
         <button type="submit" class="btn btn-primary">Search</button>
