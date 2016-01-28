@@ -29,6 +29,14 @@ app.get('/style.css', function(req, res) {
   res.sendFile(__dirname + '/style.css');
 });
 
+app.get('/main.jpg', function(req, res) {
+  res.sendFile(__dirname + '/main.jpg');
+});
+
+app.get('/', function(req, res) {
+  res.sendFile(__dirname + '/index.html');
+});
+
 app.get('/signup', function(req, res) {
   res.sendFile(__dirname + '/signup.html');
 });
@@ -57,6 +65,7 @@ app.post('/signup-submit', jsonParser, function(req, res) {
   res.json(req.body);
 });
 
-app.listen(8080, function(){
+var port = process.env.PORT || 8080;
+app.listen(port, function(){
   console.log('server live on port 8080');
 });

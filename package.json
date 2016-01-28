@@ -1,0 +1,28 @@
+{
+  "name": "lessons",
+  "version": "1.0.0",
+  "description": "A place to search for surf lessons in your area.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aaronmarkle/lessons.git"
+  },
+  "author": "Aaron Markle",
+  "dependencies": {
+    "express": "*",
+    "body-parser": "*",
+    "mongoose": "*"
+  },
+  "engines": {
+    "node": "4.2.2"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aaronmarkle/lessons/issues"
+  },
+  "homepage": "https://github.com/aaronmarkle/lessons#readme"
+}
