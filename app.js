@@ -5,7 +5,7 @@ var jsonParser = bodyParser.json();
 
 //Mongoose Configuration
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/lessons');
+//mongoose.connect('mongodb://localhost/lessons');
 var Schema = mongoose.Schema;
 var instructorSchema = new Schema({
   email: String,
