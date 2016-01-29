@@ -22,9 +22,20 @@
       </form>
     </div>
   </div>
-  <div id="results" class="container">
-    <div ng-repeat="instructors in vm.results">
-      <p>{{instructors.firstName}}</p>
+  <div class="container">
+    <div id="results" ng-repeat="instructors in vm.results">
+      <div class="row">
+        <div class="col-xs-4">
+          <img class="img-responsive center-block" src="surfer.png">
+        </div>
+        <div class="col-xs-8">
+          <p>Name: {{instructors.firstName}} {{instructors.lastName}}</p>
+          <p>Email: {{instructors.email}}</p>
+          <p>Phone Number: {{instructors.phone}}</p>
+          <p>Available Hours:</p>
+          <p>Bio:</p>
+        </div>
+      </div>
     </div>
   </div>
 </body>
