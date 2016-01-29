@@ -7,7 +7,7 @@ var search = require('./routes/search.js');
 
 //Mongoose Configuration
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/lessons');
+mongoose.connect('mongodb://aaronmarkle:secretlessons@ds051595.mongolab.com:51595/surflessons');
 
 //Passport Configuration
 
