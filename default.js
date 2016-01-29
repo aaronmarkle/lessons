@@ -1,10 +1,13 @@
 app = angular.module('surfSearch', ['beachesModule']);
-app.controller('SearchController', function(beaches) {
+app.controller('SearchController', function(beaches, $http) {
   var vm = this;
   vm.options = beaches.getBeaches();
-  vm.selectedBeach = null;
+  vm.selectedBeach = {};
   vm.search = function() {
-    console.log(vm.selectedBeach + ' selected');
+    $http.post('search', vm.selectedBeach)
+      .success(function(data) {
+        console.log(data);
+      })
   }
 });
 

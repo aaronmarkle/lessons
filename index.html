@@ -13,7 +13,7 @@
       <p class="h1">Let's surf</p>
       <p class="h2">Pick a beach and see our available instructors</p>
       <form name="beachSearch" ng-submit="vm.search()">
-        <select name="beachSelect" id="beachSelect" class="form-control" ng-model="vm.selectedBeach">
+        <select name="beachSelect" id="beachSelect" class="form-control" ng-model="vm.selectedBeach.beaches">
           <option value="" disabled selected>Choose a location</option>
           <option ng-repeat="option in vm.options" value="{{option.value}}">{{option.name}}</option>
         </select>

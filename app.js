@@ -41,6 +41,11 @@ app.get('/signup', function(req, res) {
   res.sendFile(__dirname + '/signup.html');
 });
 
+app.post('/search', jsonParser, function(req, res) {
+  console.log(req.body);
+  res.json(req.body);
+});
+
 app.post('/signup-submit', jsonParser, function(req, res) {
   Instructor.findOne({'email': req.body.email}, function(err, instructor) {
     if (err) {
