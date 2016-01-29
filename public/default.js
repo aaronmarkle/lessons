@@ -17,7 +17,7 @@ var formlyApp = angular.module('formlyApp', ['formly', 'formlyBootstrap', 'beach
 formlyApp.controller('MainController', function(beaches, $http) {
   var vm = this;
   vm.processForm = function() {
-    $http.post('signup-submit', vm.instructor)
+    $http.post('signup', vm.instructor)
       .success(function(data) {
         console.log(data);
       })
