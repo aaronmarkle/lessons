@@ -11,16 +11,6 @@ app.controller('SearchController', function(beaches, $http) {
   }
 });
 
-
-
-
-
-
-
-
-
-
-
 //Signup form Module
 var formlyApp = angular.module('formlyApp', ['formly', 'formlyBootstrap', 'beachesModule']);
 

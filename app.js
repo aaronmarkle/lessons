@@ -19,19 +19,8 @@ var Instructor = mongoose.model('Instructor', instructorSchema);
 
 //Passport Configuration
 
-
 //Static Routes
-app.get('/default.js', function(req, res) {
-  res.sendFile(__dirname + '/default.js');
-});
-
-app.get('/style.css', function(req, res) {
-  res.sendFile(__dirname + '/style.css');
-});
-
-app.get('/main.jpg', function(req, res) {
-  res.sendFile(__dirname + '/main.jpg');
-});
+app.use(express.static('public'));
 
 app.get('/', function(req, res) {
   res.sendFile(__dirname + '/index.html');
