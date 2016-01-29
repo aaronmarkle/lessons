@@ -42,12 +42,10 @@ app.get('/signup', function(req, res) {
 });
 
 app.post('/search', jsonParser, function(req, res) {
-  console.log(req.body);
   Instructor.find(req.body).exec(function(err, instructors) {
     availableInstructors = instructors;
-    console.log(availableInstructors);
+    res.json(availableInstructors);
   });
-  res.json(req.body);
 });
 
 app.post('/signup-submit', jsonParser, function(req, res) {

@@ -21,5 +21,10 @@
       </form>
     </div>
   </div>
+  <div id="results" class="container">
+    <div ng-repeat="instructors in vm.results">
+      <p>{{instructors.firstName}}</p>
+    </div>
+  </div>
 </body>
 </html>

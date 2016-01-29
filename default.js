@@ -6,7 +6,7 @@ app.controller('SearchController', function(beaches, $http) {
   vm.search = function() {
     $http.post('search', vm.selectedBeach)
       .success(function(data) {
-        console.log(data);
+        vm.results = data;
       })
   }
 });
