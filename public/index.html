@@ -4,10 +4,12 @@
   <title>Surf Lessons</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <link rel="stylesheet" href="style.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="https://getbootstrap.com/dist/js/bootstrap.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/api-check/7.5.5/api-check.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-formly/7.5.0/formly.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-formly-templates-bootstrap/6.2.0/angular-formly-templates-bootstrap.min.js"></script>
   <script src="default.js"></script>
+  <script src="formlyApp.js"></script>
   <script src="beachesModule.js"></script>
 </head>
 
@@ -23,11 +25,25 @@
               <option value="" disabled selected>Choose a location</option>
               <option ng-repeat="option in vm.options" value="{{option.value}}">{{option.name}}</option>
             </select>
-            <button type="submit" class="btn btn-primary">Search</button>
+            <button type="submit" class="btn btn-success">Search</button>
           </form>
           <p id="marquee" class="h4"><span id="alpha">Or sign up as an instructor <a href="signup">here</a></span></p>
         </div>
       </div>
+    </div>
+  </div>
+  <div ng-app="formlyApp" ng-controller="MainController as vm">
+    <div class="container col-md-5 col-md-offset-1">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+    <div id="signup" class="container col-md-5">
+      <div id="messages" ng-show"message">{{message}}</div>
+      <form ng-submit="vm.processForm()" novalidate>
+        <p class="h1">Instructor Signup</p>
+        <formly-form model="vm.instructor" fields="vm.instructorFields" form="vm.instructorForm">
+          <button type="submit" class="btn btn-primary" ng-disabled="vm.instructorForm.$invalid">Signup</button>
+        </formly-form>
+      </form>
     </div>
   </div>
   <div class="container">

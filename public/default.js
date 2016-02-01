@@ -1,4 +1,4 @@
-app = angular.module('surfSearch', ['beachesModule']);
+app = angular.module('surfSearch', ['beachesModule', 'formlyApp']);
 
 app.controller('SearchController', function(beaches, $http) {
   var vm = this;
