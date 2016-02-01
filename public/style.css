@@ -2,15 +2,8 @@ body {
   background-color: #eee;
 }
 
-#marquee {
-  text-shadow: none;
-  margin-top: 25px;
-}
-
-#alpha {
-  background-color: rgba(0,0,0,.7);
-  padding: 5px 10px;
-  border-radius: 4px;
+.btn-block {
+  max-width: 400px;
 }
 
 #bg {
@@ -55,6 +48,10 @@ body {
   margin-bottom: 10px;
 }
 
-#attract {
+#training-pic {
   margin-bottom: 50px;
+}
+
+.img-circle {
+  border: 2px solid #111;
 }

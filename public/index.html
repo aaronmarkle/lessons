@@ -25,9 +25,9 @@
               <option value="" disabled selected>Choose a location</option>
               <option ng-repeat="option in vm.options" value="{{option.value}}">{{option.name}}</option>
             </select>
-            <button type="submit" class="btn btn-success">Search</button>
+            <button type="submit" class="btn btn-block btn-primary">Search</button>
           </form>
-          <p id="marquee" class="h4"><span id="alpha">Or sign up as an instructor below</p>
+          <p class="h4">Or sign up as an instructor below</p>
         </div>
       </div>
     </div>
@@ -56,7 +56,9 @@
         <p>"The best surfer out there is the one having the most fun."</p>
         <footer><cite>Duke Kahanamoku</cite></footer>
       </blockquote>
-      <img class="img-responsive center-block img-circle hidden-xs" src="training-test.png">
+      <div class="col-lg-10 col-lg-offset-1">
+        <img id="training-pic" class="img-responsive center-block img-circle hidden-xs" src="training-test.png">
+      </div>
     </div>
     <div id="signup" class="container col-sm-5 col-sm-offset-0 col-xs-10 col-xs-offset-1">
       <div id="messages" ng-show="vm.message" class="alert alert-success">{{vm.message}}</div>
@@ -64,7 +66,7 @@
       <form ng-submit="vm.processForm()" novalidate>
         <p class="h1">Instructor Signup</p>
         <formly-form model="vm.instructor" fields="vm.instructorFields" form="vm.instructorForm">
-          <button type="submit" class="btn btn-success" ng-disabled="vm.instructorForm.$invalid">Signup</button>
+          <button type="submit" class="btn btn-primary" ng-disabled="vm.instructorForm.$invalid">Signup</button>
         </formly-form>
       </form>
     </div>
