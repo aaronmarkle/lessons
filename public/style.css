@@ -2,6 +2,22 @@ body {
   background-color: #eee;
 }
 
+#marquee {
+  text-shadow: none;
+  margin-top: 25px;
+}
+
+#alpha {
+  background-color: rgba(0,0,0,.7);
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+#bg {
+  background: url('main.jpg') no-repeat center center;
+  background-size: cover;
+}
+
 #signup {
     background-color: #f2f2f2;
     border: 1px solid #ccc;
@@ -12,9 +28,9 @@ body {
 }
 
 .jumbotron {
+  background: none;
   color: #fff;
-  background: url('main.jpg') no-repeat center center;
-  background-size: cover;
+  text-shadow: 2px 2px #111;
 }
 
 #beachSelect {
@@ -37,4 +53,3 @@ body {
 .profile-pic {
   margin-bottom: 10px;
 }
-

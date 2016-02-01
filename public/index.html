@@ -4,23 +4,29 @@
   <title>Surf Lessons</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://getbootstrap.com/dist/js/bootstrap.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
   <script src="default.js"></script>
   <script src="beachesModule.js"></script>
 </head>
+
 <body ng-app="surfSearch" ng-controller="SearchController as vm">
-  <div class="jumbotron">
-    <div class="container">
-      <div class="col-xs-10 col-xs-offset-1">
-        <p class="h1">Let's surf</p>
-        <p class="h2">Pick a beach and see our available instructors</p>
-        <form name="beachSearch" ng-submit="vm.search()">
-          <select name="beachSelect" id="beachSelect" class="form-control" ng-model="vm.selectedBeach.beaches">
-            <option value="" disabled selected>Choose a location</option>
-            <option ng-repeat="option in vm.options" value="{{option.value}}">{{option.name}}</option>
-          </select>
-          <button type="submit" class="btn btn-primary">Search</button>
-        </form>
+  <div id="bg">
+    <div class="jumbotron">
+      <div class="container">
+        <div class="col-xs-10 col-xs-offset-1">
+          <p class="h1">Let's surf</p>
+          <p class="h2">Pick a beach and see our available instructors</p>
+          <form name="beachSearch" ng-submit="vm.search()">
+            <select name="beachSelect" id="beachSelect" class="form-control" ng-model="vm.selectedBeach.beaches">
+              <option value="" disabled selected>Choose a location</option>
+              <option ng-repeat="option in vm.options" value="{{option.value}}">{{option.name}}</option>
+            </select>
+            <button type="submit" class="btn btn-primary">Search</button>
+          </form>
+          <p id="marquee" class="h4"><span id="alpha">Or sign up as an instructor <a href="signup">here</a></span></p>
+        </div>
       </div>
     </div>
   </div>
