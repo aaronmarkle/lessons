@@ -14,10 +14,6 @@ mongoose.connect('mongodb://aaronmarkle:secretlessons@ds051595.mongolab.com:5159
 //Static Routes
 app.use(express.static('public'));
 
-app.get('/signup', function(req, res) {
-  res.sendFile(__dirname + '/public/signup.html');
-});
-
 app.use('/search', jsonParser, search);
 
 app.use('/signup', jsonParser, signup);
