@@ -5,8 +5,14 @@ formlyApp.controller('MainController', function(beaches, $http) {
   vm.processForm = function() {
     $http.post('signup', vm.instructor)
       .success(function(data) {
-        console.log(data);
-      })
+        if (data.message) {
+          vm.message = data.message;
+          vm.error = null;
+        }
+        if (data.error) {
+        vm.error = data.error;
+        }
+      });
   }
 
 //Formly Config

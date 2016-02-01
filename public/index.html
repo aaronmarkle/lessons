@@ -27,7 +27,7 @@
             </select>
             <button type="submit" class="btn btn-success">Search</button>
           </form>
-          <p id="marquee" class="h4"><span id="alpha">Or sign up as an instructor below.</p>
+          <p id="marquee" class="h4"><span id="alpha">Or sign up as an instructor below</p>
         </div>
       </div>
     </div>
@@ -59,7 +59,8 @@
       <img class="img-responsive center-block img-circle hidden-xs" src="training-test.png">
     </div>
     <div id="signup" class="container col-sm-5 col-sm-offset-0 col-xs-10 col-xs-offset-1">
-      <div id="messages" ng-show"message">{{message}}</div>
+      <div id="messages" ng-show="vm.message" class="alert alert-success">{{vm.message}}</div>
+      <div id="error" ng-show="vm.error" class="alert alert-danger">{{vm.error}}</div>
       <form ng-submit="vm.processForm()" novalidate>
         <p class="h1">Instructor Signup</p>
         <formly-form model="vm.instructor" fields="vm.instructorFields" form="vm.instructorForm">

@@ -9,7 +9,7 @@ signup.post('/', function(req, res) {
       console.log('error has occurred searching for instructor');
     }
     if (instructor) {
-      console.log('that email address is already in use');
+      res.send({error: 'That email address is already in use.'})
     } else {
     var newInstructor = new Instructor({
       email: req.body.email,
@@ -23,7 +23,8 @@ signup.post('/', function(req, res) {
       if (err) {
         console.log('error saving instructor');
       }
-    });  
+      res.send({message: 'Form successfully submitted.  Please login to update your settings.'});
+    });
     }
   });
 });
