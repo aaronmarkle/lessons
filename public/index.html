@@ -27,27 +27,9 @@
             </select>
             <button type="submit" class="btn btn-success">Search</button>
           </form>
-          <p id="marquee" class="h4"><span id="alpha">Or sign up as an instructor <a href="signup">here</a></span></p>
+          <p id="marquee" class="h4"><span id="alpha">Or sign up as an instructor below.</p>
         </div>
       </div>
-    </div>
-  </div>
-  <div ng-app="formlyApp" ng-controller="MainController as vm">
-    <div class="container col-sm-5 col-sm-offset-1">
-      <blockquote class="blockquote-reverse h2">
-        <p>"The best surfer out there is the one having the most fun."</p>
-        <footer><cite>Duke Kahanamoku</cite></footer>
-      </blockquote>
-      <img class="img-responsive img-circle hidden-xs" src="training-test.png">
-    </div>
-    <div id="signup" class="container col-sm-5">
-      <div id="messages" ng-show"message">{{message}}</div>
-      <form ng-submit="vm.processForm()" novalidate>
-        <p class="h1">Instructor Signup</p>
-        <formly-form model="vm.instructor" fields="vm.instructorFields" form="vm.instructorForm">
-          <button type="submit" class="btn btn-success" ng-disabled="vm.instructorForm.$invalid">Signup</button>
-        </formly-form>
-      </form>
     </div>
   </div>
   <div class="container">
@@ -66,6 +48,24 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
+  <div ng-app="formlyApp" ng-controller="MainController as vm">
+    <div class="container col-sm-5 col-sm-offset-1">
+      <blockquote class="blockquote-reverse h2">
+        <p>"The best surfer out there is the one having the most fun."</p>
+        <footer><cite>Duke Kahanamoku</cite></footer>
+      </blockquote>
+      <img class="img-responsive center-block img-circle hidden-xs" src="training-test.png">
+    </div>
+    <div id="signup" class="container col-sm-5 col-sm-offset-0 col-xs-10 col-xs-offset-1">
+      <div id="messages" ng-show"message">{{message}}</div>
+      <form ng-submit="vm.processForm()" novalidate>
+        <p class="h1">Instructor Signup</p>
+        <formly-form model="vm.instructor" fields="vm.instructorFields" form="vm.instructorForm">
+          <button type="submit" class="btn btn-success" ng-disabled="vm.instructorForm.$invalid">Signup</button>
+        </formly-form>
+      </form>
     </div>
   </div>
 </body>

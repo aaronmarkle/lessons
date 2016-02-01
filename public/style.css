@@ -24,6 +24,7 @@ body {
     padding: 20px;
     -webkit-box-shadow: 0 2px 2px 1px rgba(0,0,0,0.2);
     box-shadow: 0 2px 2px 1px rgba(0,0,0,0.2);
+    margin-bottom: 50px;
 }
 
 .jumbotron {
@@ -54,6 +55,6 @@ body {
   margin-bottom: 10px;
 }
 
-.blockquote-reverse {
-  margin-top: 0;
+#attract {
+  margin-bottom: 50px;
 }
