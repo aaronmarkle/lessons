@@ -5,35 +5,19 @@ var jsonParser = bodyParser.json();
 var urlParser = bodyParser.urlencoded({ extended: false });
 var signup = require('./routes/signup.js');
 var search = require('./routes/search.js');
+var auth = require('./routes/auth.js');
 
 //Mongoose Configuration
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://aaronmarkle:secretlessons@ds051595.mongolab.com:51595/surflessons');
 
-//Passport Configuration
+//Passport Sessions Configuration
 var passport = require('passport');
-var LocalStrategy = require('passport-local').Strategy;
-var Instructor = require('./models/instructor.js');
-passport.use('local-login', new LocalStrategy(function(username, password, done) {
-  Instructor.findOne({email: username}, function(err, user){
-    if (err) {
-      return done(err);
-    }
-    if (!user) {
-      return done(null, false, { message: 'Incorrect username.' });
-    }
-    if (password === user.password) {
-      return done(null, user);
-    } else {
-      return done(null, false, { message: 'Incorrect password.' });
-    }
-  });
-}));
-
 passport.serializeUser(function(user, done) {
   done(null, user.id);
 });
 
+var Instructor = require('./models/instructor.js');
 passport.deserializeUser(function(id, done) {
   Instructor.findById(id, function(err, user) {
     done(err, user);
@@ -57,7 +41,7 @@ app.use('/search', jsonParser, search);
 
 app.use('/signup', jsonParser, signup);
 
-app.get('/login', urlParser, passport.authenticate('local-login', {successRedirect: '/dashboard', failureRedirect: '/failure'}));
+app.get('/login', urlParser, auth);
 
 app.get('/dashboard', function(req, res) {
   if (req.user) {
@@ -65,7 +49,7 @@ app.get('/dashboard', function(req, res) {
   } else {
     res.redirect('/');
   }
-})
+});
 
 app.listen((process.env.PORT || 8080), function(){
   console.log('server live on port 8080');
