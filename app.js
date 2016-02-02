@@ -51,6 +51,10 @@ app.get('/dashboard', function(req, res) {
   }
 });
 
+app.get('/userinfo', function(req, res) {
+  res.json(req.user);
+});
+
 app.listen((process.env.PORT || 8080), function(){
   console.log('server live on port 8080');
 });
