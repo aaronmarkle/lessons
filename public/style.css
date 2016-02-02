@@ -8,6 +8,10 @@ body {
   padding: 20px 40px 10px 10px;
 }
 
+.login-input {
+  color: #000;
+}
+
 .btn-block {
   max-width: 400px;
 }

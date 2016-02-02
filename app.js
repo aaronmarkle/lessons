@@ -9,10 +9,11 @@ var search = require('./routes/search.js');
 //Mongoose Configuration
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://aaronmarkle:secretlessons@ds051595.mongolab.com:51595/surflessons');
-var Instructor = require('./models/instructor.js');
+
 //Passport Configuration
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
+var Instructor = require('./models/instructor.js');
 passport.use('local-login', new LocalStrategy(function(username, password, done) {
   Instructor.findOne({email: username}, function(err, user){
     if (err) {
@@ -56,7 +57,15 @@ app.use('/search', jsonParser, search);
 
 app.use('/signup', jsonParser, signup);
 
-app.post('/login', urlParser, passport.authenticate('local-login', {successRedirect: '/success', failureRedirect: '/failure'}));
+app.get('/login', urlParser, passport.authenticate('local-login', {successRedirect: '/dashboard', failureRedirect: '/failure'}));
+
+app.get('/dashboard', function(req, res) {
+  if (req.user) {
+    res.sendFile(__dirname + '/public/dashboard.html');
+  } else {
+    res.redirect('/');
+  }
+})
 
 app.listen((process.env.PORT || 8080), function(){
   console.log('server live on port 8080');
