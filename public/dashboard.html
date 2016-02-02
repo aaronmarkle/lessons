@@ -23,17 +23,35 @@
         </ul>
       </div>
       <div class="col-sm-8 col-sm-offset-4 col-md-9 col-md-offset-3 main">
-        <p class="h2">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        </p>
-        <p class="h3">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
-        <p class="h4">{{vm.userInfo.firstName}}</p>
-        <p class="h4">{{vm.userInfo.lastName}}</p>
-        <p class="h4">{{vm.userInfo.email}}</p>
-        <p class="h4">{{vm.userInfo.phone}}</p>
-        <p class="h4">{{vm.userInfo.beaches}}</p>
+        <div>
+          <p class="h2">Welcome, {{vm.userInfo.firstName}}</p>
+          <p class="h3">Your current info:</p>
+          <p class="h4">Email: {{vm.userInfo.email}}</p>
+          <p class="h4">Phone: {{vm.userInfo.phone}}</p>
+          <p class="h4">Beach: {{vm.userInfo.beaches}}</p>
+        </div>
+        <br>
+        <div>
+          <form>
+            <p>Select your availability for today:</p>
+            <div class="checkbox">
+              <label><input type="checkbox" value="8am"> 8am - 10am</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" value="10am"> 10am - 12pm</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" value="12pm"> 12pm - 2pm</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" value="2pm"> 2pm - 4pm</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" value="4pm"> 4pm - 6pm</label>
+            </div>
+            <button class="btn btn-success">I'm available</button>
+          </form>
+        </div>
       </div>
     </div>
   </div>
