@@ -15,7 +15,10 @@
   "dependencies": {
     "express": "*",
     "body-parser": "*",
-    "mongoose": "*"
+    "mongoose": "*",
+    "passport": "*",
+    "passport-local": "*",
+    "express-session": "*"
   },
   "engines": {
     "node": "4.2.2"
