@@ -3,7 +3,8 @@ app = angular.module('dashboard', []);
 app.controller('UserInfoController', function(userInfo, updateBio) {
   var vm = this;
   vm.updateBio = function() {
-    updateBio.setBio(vm.bio).then(function(response) {
+    newBio = {bio: vm.bio};
+    updateBio.setBio(newBio).then(function(response) {
       console.log(response);
     });
   }
@@ -25,7 +26,7 @@ app.factory('userInfo', function($http) {
 });
 
 app.factory('updateBio', function($http) {
-  function setBio() {
+  function setBio(newBio) {
     return $http.post('setBio', newBio);
   }
   return {

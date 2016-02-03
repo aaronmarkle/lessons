@@ -55,6 +55,10 @@ app.get('/userinfo', function(req, res) {
   res.json(req.user);
 });
 
+app.post('/setBio', jsonParser, function(req, res) {
+  console.log(req.body);
+});
+
 app.get('/logout', function(req, res) {
   req.logout();
   res.redirect('/');
