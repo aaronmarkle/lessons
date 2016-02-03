@@ -66,6 +66,17 @@ app.post('/setBio', jsonParser, function(req, res) {
   });
 });
 
+app.post('/setTimes', jsonParser, function(req, res) {
+  var Instructor = require('./models/instructor.js');
+  Instructor.findOneAndUpdate({email: req.user.email}, {availableTimes: req.body.availableTimes}, function(err, user) {
+    if (err) {
+      res.send({error: 'There was an erorr updating your availability, please try again later.'});
+    } else {
+      res.send({message: 'Your availability has been successfully updated.'});
+    }
+  });
+});
+
 app.get('/logout', function(req, res) {
   req.logout();
   res.redirect('/');
