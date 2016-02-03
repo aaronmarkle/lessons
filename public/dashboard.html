@@ -57,7 +57,7 @@
             <p class="help-block">1000 characters max</p>
             <div id="messages" ng-show="vm.message" class="alert alert-success">{{vm.message}}</div>
             <div id="error" ng-show="vm.error" class="alert alert-danger">{{vm.error}}</div>
-            <textarea class="form-control" rows="6" maxlength="1000" placeholder="{{vm.userInfo.bio}}" ng-model="vm.bio"></textarea>
+            <textarea class="form-control" rows="6" maxlength="1000" placeholder="Type your biography here" ng-model="vm.userInfo.bio"></textarea>
             <button typ="submit" class="btn btn-success">Submit Bio</button>
           </form>
           <pre>

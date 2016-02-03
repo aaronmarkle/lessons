@@ -3,7 +3,7 @@ app = angular.module('dashboard', []);
 app.controller('UserInfoController', function(userInfo, updateBio, updateTimes) {
   var vm = this;
   vm.updateBio = function() {
-    newBio = {bio: vm.bio};
+    newBio = {bio: vm.userInfo.bio};
     updateBio.setBio(newBio).then(function(response) {
       if (response.data.error) {
         vm.error = response.data.error;
