@@ -56,7 +56,12 @@ app.get('/userinfo', function(req, res) {
 });
 
 app.post('/setBio', jsonParser, function(req, res) {
-  console.log(req.body);
+  var Instructor = require('./models/instructor.js');
+  Instructor.findOneAndUpdate({email: req.user.email}, {bio: req.body.bio}, function(err, user) {
+    if (err) {
+      console.log('Error updating bio.');
+    }
+  });
 });
 
 app.get('/logout', function(req, res) {

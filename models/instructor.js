@@ -6,7 +6,8 @@ var instructorSchema = new Schema({
   firstName: String,
   lastName: String,
   phone: String,
-  beaches: String
+  beaches: String,
+  bio: String
 });
 
 module.exports = mongoose.model('Instructor', instructorSchema);
