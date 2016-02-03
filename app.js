@@ -55,6 +55,11 @@ app.get('/userinfo', function(req, res) {
   res.json(req.user);
 });
 
+app.get('/logout', function(req, res) {
+  req.logout();
+  res.redirect('/');
+});
+
 app.listen((process.env.PORT || 8080), function(){
   console.log('server live on port 8080');
 });
