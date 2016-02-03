@@ -52,6 +52,12 @@
             </div>
             <button type="submit" class="btn btn-success">I'm available</button>
           </form>
+          <form ng-submit="vm.updateBio()">
+            <p class="h3">Update your bio:</p>
+            <p class="help-block">1000 characters max</p>
+            <textarea class="form-control" rows="6" maxlength="1000" placeholder="{{vm.userInfo.bio}}" ng-model="vm.bio"></textarea>
+            <button typ="submit" class="btn btn-success">Submit Bio</button>
+          </form>
           <pre>
             {{availableTimes}}
           </pre>

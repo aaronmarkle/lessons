@@ -14,3 +14,9 @@
 .main {
   padding: 20px;
 }
+
+textarea {
+  resize: none;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
