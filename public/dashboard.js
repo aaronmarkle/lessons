@@ -5,7 +5,11 @@ app.controller('UserInfoController', function(userInfo, updateBio) {
   vm.updateBio = function() {
     newBio = {bio: vm.bio};
     updateBio.setBio(newBio).then(function(response) {
-      console.log(response);
+      if (response.data.error) {
+        vm.error = response.data.error;
+      } else {
+        vm.message = response.data.message;
+      }
     });
   }
   vm.updateTimes = function() {

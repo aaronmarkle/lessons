@@ -59,7 +59,9 @@ app.post('/setBio', jsonParser, function(req, res) {
   var Instructor = require('./models/instructor.js');
   Instructor.findOneAndUpdate({email: req.user.email}, {bio: req.body.bio}, function(err, user) {
     if (err) {
-      console.log('Error updating bio.');
+      res.send({error: 'There was an erorr updating your bio, please try again later.'});
+    } else {
+      res.send({message: 'Your biography has been successfully updated.'});
     }
   });
 });
