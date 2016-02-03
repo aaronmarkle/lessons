@@ -1,6 +1,6 @@
 app = angular.module('dashboard', []);
 
-app.controller('UserInfoController', function(userInfo, updateBio) {
+app.controller('UserInfoController', function(userInfo, updateBio, updateTimes) {
   var vm = this;
   vm.updateBio = function() {
     newBio = {bio: vm.bio};
@@ -13,7 +13,8 @@ app.controller('UserInfoController', function(userInfo, updateBio) {
     });
   }
   vm.updateTimes = function() {
-    console.log('times submitted');
+    console.log(vm.userInfo.availableTimes);
+
   }
   userInfo.getUserInfo().then(function(response) {
     vm.userInfo = response.data;
@@ -35,5 +36,14 @@ app.factory('updateBio', function($http) {
   }
   return {
     setBio: setBio
+  }
+});
+
+app.factory('updateTimes', function($http) {
+  function setTimes(newTimes) {
+    return $http.post('setTimes', newTimes);
+  }
+  return {
+    setTimes: setTimes
   }
 });
