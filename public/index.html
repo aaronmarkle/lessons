@@ -43,19 +43,19 @@
       <div class="row">
         <div class="col-xs-10 col-xs-offset-1 instructor">
           <div class="col-sm-5 col-sm-offset-0 col-xs-8 col-xs-offset-2">
-            <img class="img-responsive center-block profile-pic" src="surfer.png">
+            <img class="img-responsive img-circle center-block profile-pic" src="surfer.png">
           </div>
           <div class="col-sm-7 col-xs-12">
-            <p>Name: {{instructors.firstName}} {{instructors.lastName}}</p>
-            <p>Email: {{instructors.email}}</p>
-            <p>Phone Number: {{instructors.phone}}</p>
-            <p>Available Hours:</p>
-            <p ng-class="{{instructors.availableTimes[800].status}} ? 'available' : 'unavailable'">8am-10am: {{instructors.availableTimes[800].status | yesNo}}</p>
-            <p ng-class="{{instructors.availableTimes[1000].status}} ? 'available' : 'unavailable'">10am-12pm: {{instructors.availableTimes[1000].status | yesNo}}</p>
-            <p ng-class="{{instructors.availableTimes[1200].status}} ? 'available' : 'unavailable'">12pm-2pm: {{instructors.availableTimes[1200].status | yesNo}}</p>
-            <p ng-class="{{instructors.availableTimes[1400].status}} ? 'available' : 'unavailable'">2pm-4pm: {{instructors.availableTimes[1400].status | yesNo}}</p>
-            <p ng-class="{{instructors.availableTimes[1600].status}} ? 'available' : 'unavailable'">4pm-6pm: {{instructors.availableTimes[1600].status | yesNo}}</p>
-            <p>Bio: {{instructors.bio}}</p>
+            <p><span class="h5">Name:</span> {{instructors.firstName}} {{instructors.lastName}}</p>
+            <p><span class="h5">Email:</span> {{instructors.email}}</p>
+            <p><span class="h5">Phone Number:</span> {{instructors.phone}}</p>
+            <p><span class="h5">Available Hours:</span></p>
+            <p><strong ng-class="{{instructors.availableTimes[800].status}} ? 'text-success' : 'text-danger'">8am-10am: {{instructors.availableTimes[800].status | yesNo}}</strong></p>
+            <p><strong ng-class="{{instructors.availableTimes[1000].status}} ? 'text-success' : 'text-danger'">10am-12pm: {{instructors.availableTimes[1000].status | yesNo}}</strong></p>
+            <p><strong ng-class="{{instructors.availableTimes[1200].status}} ? 'text-success' : 'text-danger'">12pm-2pm: {{instructors.availableTimes[1200].status | yesNo}}</strong></p>
+            <p><strong ng-class="{{instructors.availableTimes[1400].status}} ? 'text-success' : 'text-danger'">2pm-4pm: {{instructors.availableTimes[1400].status | yesNo}}</strong></p>
+            <p><strong ng-class="{{instructors.availableTimes[1600].status}} ? 'text-success' : 'text-danger'">4pm-6pm: {{instructors.availableTimes[1600].status | yesNo}}</strong></p>
+            <p><span class="h5">Bio:</span> {{instructors.bio}}</p>
           </div>
         </div>
       </div>
