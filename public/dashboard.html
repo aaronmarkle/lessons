@@ -23,8 +23,7 @@
         </ul>
       </div>
       <div class="col-sm-8 col-sm-offset-4 col-md-9 col-md-offset-3 main">
-        <p><a href="/logout"><button class="btn btn-danger">Logout</button></a></p>
-        <p class="h2">Welcome, {{vm.userInfo.firstName}}</p>
+        <p class="h2">Welcome, {{vm.userInfo.firstName}} <a href="/logout" class="pull-right"><button class="btn btn-danger">Logout</button></a></p>
         <div class="dashboard-section">
           <p class="h4">Your current info:</p>
           <p><span class="h5">Email:</span> {{vm.userInfo.email}}</p>
