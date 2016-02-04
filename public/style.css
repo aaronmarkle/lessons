@@ -73,6 +73,7 @@ blockquote {
 
 .available {
   color: green;
+  font-weight: bold;
 }
 
 .unavailable {

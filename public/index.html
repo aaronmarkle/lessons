@@ -50,7 +50,11 @@
             <p>Email: {{instructors.email}}</p>
             <p>Phone Number: {{instructors.phone}}</p>
             <p>Available Hours:</p>
-            <p ng-repeat="(key, value) in instructors.availableTimes | orderBy:'{{key}}'" ng-class="{{value}} ? 'available' : 'unavailable'">{{key}}: {{value | yesNo}}</p>
+            <p ng-class="{{instructors.availableTimes[800].status}} ? 'available' : 'unavailable'">8am-10am: {{instructors.availableTimes[800].status | yesNo}}</p>
+            <p ng-class="{{instructors.availableTimes[1000].status}} ? 'available' : 'unavailable'">10am-12pm: {{instructors.availableTimes[1000].status | yesNo}}</p>
+            <p ng-class="{{instructors.availableTimes[1200].status}} ? 'available' : 'unavailable'">12pm-2pm: {{instructors.availableTimes[1200].status | yesNo}}</p>
+            <p ng-class="{{instructors.availableTimes[1400].status}} ? 'available' : 'unavailable'">2pm-4pm: {{instructors.availableTimes[1400].status | yesNo}}</p>
+            <p ng-class="{{instructors.availableTimes[1600].status}} ? 'available' : 'unavailable'">4pm-6pm: {{instructors.availableTimes[1600].status | yesNo}}</p>
             <p>Bio: {{instructors.bio}}</p>
           </div>
         </div>

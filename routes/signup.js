@@ -17,7 +17,14 @@ signup.post('/', function(req, res) {
       firstName: req.body.firstName,
       lastName: req.body.lastName,
       phone: req.body.phone,
-      beaches: req.body.beaches
+      beaches: req.body.beaches,
+      availableTimes: {
+        '800': {'status': false},
+        '1000': {'status': false},
+        '1200': {'status': false},
+        '1400': {'status': false},
+        '1600': {'status': false}
+      }
     });
     newInstructor.save(function(err) {
       if (err) {
