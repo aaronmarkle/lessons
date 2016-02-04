@@ -12,3 +12,9 @@ app.controller('SearchController', function(beaches, $http) {
     }
   }
 });
+
+app.filter('yesNo', function() {
+  return function(input) {
+    return input ? 'Available' : 'Unavailable';
+  }
+});

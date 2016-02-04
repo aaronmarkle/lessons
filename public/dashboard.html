@@ -36,19 +36,19 @@
           <form ng-submit="vm.updateTimes()">
             <p>Select your daily available hours:</p>
             <div class="checkbox">
-              <label><input type="checkbox" ng-model="vm.userInfo.availableTimes.am8">8am - 10am</label>
+              <label><input type="checkbox" ng-model="vm.userInfo.availableTimes.time0800">8am - 10am</label>
             </div>
             <div class="checkbox">
-              <label><input type="checkbox" ng-model="vm.userInfo.availableTimes.am10">10am - 12pm</label>
+              <label><input type="checkbox" ng-model="vm.userInfo.availableTimes.time1000">10am - 12pm</label>
             </div>
             <div class="checkbox">
-              <label><input type="checkbox" ng-model="vm.userInfo.availableTimes.pm12">12pm - 2pm</label>
+              <label><input type="checkbox" ng-model="vm.userInfo.availableTimes.time1200">12pm - 2pm</label>
             </div>
             <div class="checkbox">
-              <label><input type="checkbox" ng-model="vm.userInfo.availableTimes.pm2">2pm - 4pm</label>
+              <label><input type="checkbox" ng-model="vm.userInfo.availableTimes.time1400">2pm - 4pm</label>
             </div>
             <div class="checkbox">
-              <label><input type="checkbox" ng-model="vm.userInfo.availableTimes.pm4">4pm - 6pm</label>
+              <label><input type="checkbox" ng-model="vm.userInfo.availableTimes.time1600">4pm - 6pm</label>
             </div>
             <button type="submit" class="btn btn-success">I'm available</button>
           </form>

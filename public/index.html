@@ -50,7 +50,7 @@
             <p>Email: {{instructors.email}}</p>
             <p>Phone Number: {{instructors.phone}}</p>
             <p>Available Hours:</p>
-            <p ng-repeat="(key, value) in instructors.availableTimes">{{key}}: {{value}}</p>
+            <p ng-repeat="(key, value) in instructors.availableTimes | orderBy:'{{key}}'">{{key}}: {{value | yesNo}}</p>
             <p>Bio: {{instructors.bio}}</p>
           </div>
         </div>
