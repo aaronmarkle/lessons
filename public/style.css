@@ -70,3 +70,11 @@ blockquote {
   margin-top: 0 !important;
   margin-bottom: 25px !important;
 }
+
+.available {
+  color: green;
+}
+
+.unavailable {
+  color: red;
+}
