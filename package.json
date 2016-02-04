@@ -18,7 +18,8 @@
     "mongoose": "*",
     "passport": "*",
     "passport-local": "*",
-    "express-session": "*"
+    "express-session": "*",
+    "ng-file-upload": "*"
   },
   "engines": {
     "node": "4.2.2"
