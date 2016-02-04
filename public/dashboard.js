@@ -9,9 +9,9 @@ app.controller('UserInfoController', function(userInfo, updateBio, updateTimes) 
     newBio = {bio: vm.userInfo.bio};
     updateBio.setBio(newBio).then(function(response) {
       if (response.data.error) {
-        vm.error = response.data.error;
+        vm.bioError = response.data.bioError;
       } else {
-        vm.message = response.data.message;
+        vm.bioMessage = response.data.bioMessage;
       }
     });
   }
@@ -19,9 +19,9 @@ app.controller('UserInfoController', function(userInfo, updateBio, updateTimes) 
     newTimes = {availableTimes: vm.userInfo.availableTimes};
     updateTimes.setTimes(newTimes).then(function(response) {
       if (response.data.error) {
-        vm.error = response.data.error;
+        vm.timesError = response.data.timesError;
       } else {
-        vm.message = response.data.message;
+        vm.timesMessage = response.data.timesMessage;
       }
     });
   }

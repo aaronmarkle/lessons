@@ -59,9 +59,9 @@ app.post('/setBio', jsonParser, function(req, res) {
   var Instructor = require('./models/instructor.js');
   Instructor.findOneAndUpdate({email: req.user.email}, {bio: req.body.bio}, function(err, user) {
     if (err) {
-      res.send({error: 'There was an erorr updating your bio, please try again later.'});
+      res.send({bioError: 'There was an erorr updating your bio, please try again later.'});
     } else {
-      res.send({message: 'Your biography has been successfully updated.'});
+      res.send({bioMessage: 'Your biography has been successfully updated.'});
     }
   });
 });
@@ -70,9 +70,9 @@ app.post('/setTimes', jsonParser, function(req, res) {
   var Instructor = require('./models/instructor.js');
   Instructor.findOneAndUpdate({email: req.user.email}, {availableTimes: req.body.availableTimes}, function(err, user) {
     if (err) {
-      res.send({error: 'There was an erorr updating your availability, please try again later.'});
+      res.send({timesError: 'There was an erorr updating your availability, please try again later.'});
     } else {
-      res.send({message: 'Your availability has been successfully updated.'});
+      res.send({timesMessage: 'Your availability has been successfully updated.'});
     }
   });
 });
