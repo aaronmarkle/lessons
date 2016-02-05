@@ -24,7 +24,8 @@ signup.post('/', function(req, res) {
         '1200': {'status': false},
         '1400': {'status': false},
         '1600': {'status': false}
-      }
+      },
+      picture: 'surfer.png'
     });
     newInstructor.save(function(err) {
       if (err) {

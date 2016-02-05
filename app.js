@@ -95,9 +95,9 @@ app.get('/logout', function(req, res) {
 });
 
 app.post('/upload', upload.single('file'), function(req, res) {
-  console.log(req.file.path); // this is always an empty array
+  var formattedPath = req.file.path.split('\\').pop().split('/').pop();
   var Instructor = require('./models/instructor.js');
-  Instructor.findOneAndUpdate({email: req.user.email}, {picture: req.file.path}, function(err, user) {
+  Instructor.findOneAndUpdate({email: req.user.email}, {picture: formattedPath}, function(err, user) {
     if (err) {
       res.send({imageError: 'There was an error updating your profile picture, please try again later.'});
     } else {

@@ -26,7 +26,10 @@ textarea {
   margin-bottom: 40px;
 }
 
-/* ng-file-upload testing */
+.img-circle {
+  max-width: 300px;
+  min-height: 300px;
+}
 
 .thumb {
     width: 24px;
