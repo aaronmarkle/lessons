@@ -19,7 +19,8 @@
     "passport": "*",
     "passport-local": "*",
     "express-session": "*",
-    "ng-file-upload": "*"
+    "ng-file-upload": "*",
+    "multer": "*"
   },
   "engines": {
     "node": "4.2.2"

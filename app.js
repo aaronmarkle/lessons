@@ -7,6 +7,18 @@ var signup = require('./routes/signup.js');
 var search = require('./routes/search.js');
 var auth = require('./routes/auth.js');
 
+//Multer Configuration
+var multer = require('multer');
+var storage = multer.diskStorage({
+  destination: function(req, file, cb) {
+    cb(null, 'public/uploads/')
+  },
+  filename: function (req, file, cb) {
+    cb(null, file.fieldname + '-img')
+  }
+});
+var upload = multer({storage: storage});
+
 //Mongoose Configuration
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://aaronmarkle:secretlessons@ds051595.mongolab.com:51595/surflessons');
@@ -70,7 +82,7 @@ app.post('/setTimes', jsonParser, function(req, res) {
   var Instructor = require('./models/instructor.js');
   Instructor.findOneAndUpdate({email: req.user.email}, {availableTimes: req.body.availableTimes}, function(err, user) {
     if (err) {
-      res.send({timesError: 'There was an erorr updating your availability, please try again later.'});
+      res.send({timesError: 'There was an error updating your availability, please try again later.'});
     } else {
       res.send({timesMessage: 'Your availability has been successfully updated.'});
     }
@@ -81,6 +93,12 @@ app.get('/logout', function(req, res) {
   req.logout();
   res.redirect('/');
 });
+
+app.post('/upload', upload.single('file'), function (req, res) {
+  console.log(req.body); // this contains all text data
+  console.log(req.file); // this is always an empty array
+  res.status(204).end();
+})
 
 app.listen((process.env.PORT || 8080), function(){
   console.log('server live on port 8080');

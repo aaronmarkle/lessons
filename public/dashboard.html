@@ -5,6 +5,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <link rel="stylesheet" href="dashboard.css">
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+  <script src="ng-file-upload.js"></script>
   <script src="dashboard.js"></script>
 </head>
 <body ng-app="dashboard" ng-controller="UserInfoController as vm">
@@ -29,6 +30,20 @@
           <p><span class="h5">Email:</span> {{vm.userInfo.email}}</p>
           <p><span class="h5">Phone:</span> {{vm.userInfo.phone}}</p>
           <p><span class="h5">Beach:</span> {{vm.userInfo.beaches}}</p>
+          
+          <div ng-controller="MyCtrl">
+            <h4>Upload on file select</h4>
+            <button type="file" ngf-select="uploadFiles($file, $invalidFiles)" accept="image/*" ngf-max-height="1000" ngf-max-size="1MB">Select File</button>
+            <br><br>
+            File:
+            <div style="font:smaller">{{f.name}} {{errFile.name}} {{errFile.$error}} {{errFile.$errorParam}}
+              <span class="progress" ng-show="f.progress >= 0">
+                <div style="width:{{f.progress}}%" ng-bind="f.progress + '%'"></div>
+              </span>
+            </div>
+            {{errorMsg}}
+          </div>
+
         </div>
         <div class="dashboard-section">
           <form ng-submit="vm.updateTimes()">
