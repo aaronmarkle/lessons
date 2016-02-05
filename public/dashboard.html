@@ -11,16 +11,69 @@
 <body ng-app="dashboard" ng-controller="UserInfoController as vm">
   <div class="container">
     <div class="row">
-      <div class="hidden-xs col-sm-4 col-md-3 sidebar">
-        <p class="h4">Live photos</p>
+      <div class="hidden-xs col-sm-4 col-md-4 sidebar">
+        <p class="h3 text-center">Huntington Beach Live Update</p>
+        <img class="img img-responsive img-rounded center-block spacing" src="dashboard-live.png">
         <ul class="nav nav-sidebar">
-          <li>Huntington:</li>
-          <li>Newport:</li>
-          <li>Manhattan:</li>
-          <li>Hermosa:</li>
+          <li><strong>Current Weather: </strong>Clear</li>
+          <li><strong>Surf Height: </strong>4'-5'</li>
+          <li><strong>Surf Period: </strong>12 seconds</li>
+          <li><strong>Surf Direction: </strong>West</li>
+          <li><strong>Surf Quality: </strong>Fair-good</li>
+          <li><strong>Water Temperature: </strong>59 degrees</li>
+          <li><strong>Water Surface: </strong>Smooth</li>
+          <li><strong>Wind Direction: </strong>Southeast</li>
+          <li><strong>Wind Speed: </strong>2 MPH</li>
+          <li><strong>Air Temperature: </strong>71 degrees</li>
+          <li><strong>Air Visibility: </strong>20 miles</li>
+          <li><strong>Barometric Pressure: </strong>1022 mb</li>
+          <li><strong>Sun Rise: </strong>6:48 AM</li>
+          <li><strong>Sun Set: </strong>5:26 PM</li>
+          <li><strong>High Tide: </strong>6:34 AM 5.6' / 8:08 PM 3.8'</li>
+          <li><strong>Low Tide: </strong>12:16 AM 2.1' / 1:44 PM -0.6'</li>
+        </ul>
+        <p class="h3 text-center">Pismo Beach Live Update</p>
+        <img class="img img-responsive img-rounded center-block spacing" src="dashboard-pismo.jpg">
+        <ul class="nav nav-sidebar">
+          <li><strong>Current Weather: </strong>Clear</li>
+          <li><strong>Surf Height: </strong>4'-5'</li>
+          <li><strong>Surf Period: </strong>12 seconds</li>
+          <li><strong>Surf Direction: </strong>West</li>
+          <li><strong>Surf Quality: </strong>Fair-good</li>
+          <li><strong>Water Temperature: </strong>59 degrees</li>
+          <li><strong>Water Surface: </strong>Smooth</li>
+          <li><strong>Wind Direction: </strong>Southeast</li>
+          <li><strong>Wind Speed: </strong>2 MPH</li>
+          <li><strong>Air Temperature: </strong>71 degrees</li>
+          <li><strong>Air Visibility: </strong>20 miles</li>
+          <li><strong>Barometric Pressure: </strong>1022 mb</li>
+          <li><strong>Sun Rise: </strong>6:48 AM</li>
+          <li><strong>Sun Set: </strong>5:26 PM</li>
+          <li><strong>High Tide: </strong>6:34 AM 5.6' / 8:08 PM 3.8'</li>
+          <li><strong>Low Tide: </strong>12:16 AM 2.1' / 1:44 PM -0.6'</li>
+        </ul>
+        <p class="h3 text-center">Newport Beach Live Update</p>
+        <img class="img img-responsive img-rounded center-block spacing" src="dashboard-wedge.png">
+        <ul class="nav nav-sidebar">
+          <li><strong>Current Weather: </strong>Clear</li>
+          <li><strong>Surf Height: </strong>4'-5'</li>
+          <li><strong>Surf Period: </strong>12 seconds</li>
+          <li><strong>Surf Direction: </strong>West</li>
+          <li><strong>Surf Quality: </strong>Fair-good</li>
+          <li><strong>Water Temperature: </strong>59 degrees</li>
+          <li><strong>Water Surface: </strong>Smooth</li>
+          <li><strong>Wind Direction: </strong>Southeast</li>
+          <li><strong>Wind Speed: </strong>2 MPH</li>
+          <li><strong>Air Temperature: </strong>71 degrees</li>
+          <li><strong>Air Visibility: </strong>20 miles</li>
+          <li><strong>Barometric Pressure: </strong>1022 mb</li>
+          <li><strong>Sun Rise: </strong>6:48 AM</li>
+          <li><strong>Sun Set: </strong>5:26 PM</li>
+          <li><strong>High Tide: </strong>6:34 AM 5.6' / 8:08 PM 3.8'</li>
+          <li><strong>Low Tide: </strong>12:16 AM 2.1' / 1:44 PM -0.6'</li>
         </ul>
       </div>
-      <div class="col-sm-8 col-sm-offset-4 col-md-9 col-md-offset-3 main">
+      <div class="col-sm-8 col-sm-offset-4 col-md-8 col-md-offset-4 main">
         <p class="h2">Welcome, {{vm.userInfo.firstName}} <a href="/logout" class="pull-right"><button class="btn btn-danger">Logout</button></a></p>
         <div class="dashboard-section">
           <img class="img img-responsive img-circle" ng-src="uploads/{{vm.userInfo.picture}}">
