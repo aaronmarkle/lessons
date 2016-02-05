@@ -13,7 +13,7 @@ var storage = multer.diskStorage({
   destination: function(req, file, cb) {
     cb(null, 'public/uploads/')
   },
-  filename: function (req, file, cb) {
+  filename: function(req, file, cb) {
     cb(null, file.originalname)
   }
 });
@@ -94,10 +94,16 @@ app.get('/logout', function(req, res) {
   res.redirect('/');
 });
 
-app.post('/upload', upload.single('file'), function (req, res) {
-  console.log(req.body); // this contains all text data
-  console.log(req.file); // this is always an empty array
-  res.status(204).end();
+app.post('/upload', upload.single('file'), function(req, res) {
+  console.log(req.file.path); // this is always an empty array
+  var Instructor = require('./models/instructor.js');
+  Instructor.findOneAndUpdate({email: req.user.email}, {picture: req.file.path}, function(err, user) {
+    if (err) {
+      res.send({imageError: 'There was an error updating your profile picture, please try again later.'});
+    } else {
+      res.send({imageMessage: 'Your profile picture has been successfully updated.'});
+    }
+  });
 })
 
 app.listen((process.env.PORT || 8080), function(){
