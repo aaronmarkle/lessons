@@ -22,13 +22,19 @@ textarea {
 }
 
 .dashboard-section {
-  margin-top: 20px;
-  margin-bottom: 40px;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 .img-circle {
   max-width: 300px;
   max-height: 300px;
+}
+
+#image-error{
+  display: inline-block;
+  padding: 5px;
+  margin-bottom: 0;
 }
 
 form .progress {
@@ -43,6 +49,5 @@ form .progress {
 
 .progress div {
   background-color: #72b763;
-  width: 0;
   margin: 0;
 }
