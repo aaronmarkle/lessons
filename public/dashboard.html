@@ -28,17 +28,18 @@
         <div class="dashboard-section">
           <img class="img img-responsive img-circle" ng-src="uploads/{{vm.userInfo.picture}}">
           <div ng-controller="MyCtrl">
-            <h4>Upload on file select</h4>
-            <button type="file" ngf-select="uploadFiles($file, $invalidFiles)" accept="image/*" ngf-max-height="1000" ngf-max-size="1MB">Select File</button>
-            <br><br>
-            File:
-            <div style="font:smaller">{{f.name}} {{errFile.name}} {{errFile.$error}} {{errFile.$errorParam}}
+            <p class="h4">Update your profile picture:</p>
+            <p class="help-block">Max file size: 1MB</p>
+            <button class="btn btn-default" type="file" ngf-select="uploadFiles($file, $invalidFiles)" accept="image/*" ngf-max-size="1MB">Select File</button>
+            <div>{{f.name}} {{errFile.name}} {{errFile.$error}} {{errFile.$errorParam}}
               <span class="progress" ng-show="f.progress >= 0">
                 <div style="width:{{f.progress}}%" ng-bind="f.progress + '%'"></div>
               </span>
             </div>
             {{errorMsg}}
           </div>
+        </div>
+        <div class="dashboard-section">
           <p class="h4">Your current info:</p>
           <p><span class="h5">Email:</span> {{vm.userInfo.email}}</p>
           <p><span class="h5">Phone:</span> {{vm.userInfo.phone}}</p>

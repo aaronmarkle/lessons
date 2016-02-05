@@ -27,7 +27,7 @@ app.controller('UserInfoController', function(userInfo, updateBio, updateTimes) 
   }
 });
 
-app.controller('MyCtrl', ['$scope', 'Upload', '$timeout', function($scope, Upload, $timeout) {
+app.controller('MyCtrl', ['$scope', 'Upload', '$timeout', 'userInfo', function($scope, Upload, $timeout, userInfo) {
   $scope.uploadFiles = function(file, errFiles) {
     $scope.f = file;
     $scope.errFile = errFiles && errFiles[0];

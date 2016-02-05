@@ -21,6 +21,6 @@ passport.use('local-login', new LocalStrategy(function(username, password, done)
   });
 }));
 
-auth.get('/login', passport.authenticate('local-login', {successRedirect: '/dashboard', failureRedirect: '/failure'}));
+auth.get('/login', passport.authenticate('local-login', {successRedirect: '/dashboard', failureRedirect: '/'}));
 
 module.exports = auth;
