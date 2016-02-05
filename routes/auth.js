@@ -6,7 +6,7 @@ var LocalStrategy = require('passport-local').Strategy;
 var Instructor = require('../models/instructor.js');
 
 passport.use('local-login', new LocalStrategy(function(username, password, done) {
-  Instructor.findOne({email: username}, function(err, user){
+  Instructor.findOne({email: username.toLowerCase()}, function(err, user){
     if (err) {
       return done(err);
     }

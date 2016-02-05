@@ -12,7 +12,7 @@ signup.post('/', function(req, res) {
       res.send({error: 'That email address is already in use.'})
     } else {
     var newInstructor = new Instructor({
-      email: req.body.email,
+      email: req.body.email.toLowerCase(),
       password: req.body.password,
       firstName: req.body.firstName,
       lastName: req.body.lastName,
