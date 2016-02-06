@@ -8,7 +8,7 @@
   <script src="ng-file-upload.js"></script>
   <script src="dashboard.js"></script>
 </head>
-<body ng-app="dashboard" ng-controller="UserInfoController as vm">
+<body ng-app="dashboard" ng-controller="UserInfoController as vm" class="bg-dark">
   <div class="container">
     <div class="row">
       <div class="hidden-xs col-sm-4 col-md-4 sidebar">
@@ -74,19 +74,27 @@
         </ul>
       </div>
       <div class="col-sm-8 col-sm-offset-4 col-md-8 col-md-offset-4 main">
-        <p class="h2">Welcome, {{vm.userInfo.firstName}} <a href="/logout" class="pull-right"><button class="btn btn-danger">Logout</button></a></p>
-        <div class="dashboard-section">
-          <img class="img img-responsive img-circle" ng-src="uploads/{{vm.userInfo.picture}}">
-          <div ng-controller="MyCtrl">
-            <p class="h4">Update your profile picture:</p>
-            <p class="help-block">Max file size: 1MB</p>
-            <button class="btn btn-default" type="file" ngf-select="uploadFiles($file, $invalidFiles)" accept="image/*" ngf-max-size="1MB">Select File</button>
-            <div>{{f.name}} <small id="image-error" class="alert alert-danger" ng-show="errFile.$error">Error uploding file: {{errFile.name}} {{errFile.$error}} {{errFile.$errorParam}}</small>
-              <span class="progress" ng-show="f.progress >= 0">
-                <div style="width:{{f.progress}}%" ng-bind="f.progress + '%'"></div>
-              </span>
+        <div class="pull-right">
+          <a href="/"><button class="btn btn-primary">Home</button></a>
+          <a href="/logout"><button class="btn btn-danger">Logout</button></a>
+        </div>
+        <p class="h2">Welcome, {{vm.userInfo.firstName}}</p>
+        <div class="container-fluid dashboard-section">
+          <div class="col-sm-6">
+            <img class="img img-responsive img-circle" ng-src="uploads/{{vm.userInfo.picture}}">
+          </div>
+          <div class="col-sm-6">
+            <div ng-controller="MyCtrl">
+              <p class="h4">Update your profile picture:</p>
+              <p class="help-block">Max file size: 1MB</p>
+              <button class="btn btn-default" type="file" ngf-select="uploadFiles($file, $invalidFiles)" accept="image/*" ngf-max-size="1MB">Select File</button>
+              <div>{{f.name}} <small id="image-error" class="alert alert-danger" ng-show="errFile.$error">Error uploding file: {{errFile.name}} {{errFile.$error}} {{errFile.$errorParam}}</small>
+                <span class="progress" ng-show="f.progress >= 0">
+                  <div style="width:{{f.progress}}%" ng-bind="f.progress + '%'"></div>
+                </span>
+              </div>
+              {{errorMsg}}
             </div>
-            {{errorMsg}}
           </div>
         </div>
         <div class="dashboard-section">

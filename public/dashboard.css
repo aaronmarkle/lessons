@@ -17,6 +17,10 @@
   margin-bottom: 20px;
 }
 
+.bg-dark {
+  background-color: #bbb;
+}
+
 .main {
   padding: 20px;
 }
@@ -30,11 +34,9 @@ textarea {
 .dashboard-section {
   margin-top: 10px;
   margin-bottom: 20px;
-}
-
-.img-circle {
-  max-width: 300px;
-  max-height: 300px;
+  background-color: rgba(255,255,255, .7);
+  padding: 20px;
+  border-radius: 10px;
 }
 
 #image-error{
