@@ -4,7 +4,7 @@ var signup = express.Router();
 var Instructor = require('../models/instructor.js');
 
 signup.post('/', function(req, res) {
-  Instructor.findOne({'email': req.body.email}, function(err, instructor) {
+  Instructor.findOne({'email': req.body.email.toLowerCase()}, function(err, instructor) {
     if (err) {
       console.log('error has occurred searching for instructor');
     }
