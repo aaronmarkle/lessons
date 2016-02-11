@@ -61,7 +61,8 @@ body {
 
 .profile-pic {
   margin-bottom: 10px;
-  max-height: 300px;
+  width: 80%;
+  max-height: 350px;
   border: 1px solid #111;
 }
 
@@ -73,9 +74,4 @@ body {
 blockquote {
   margin-top: 0 !important;
   margin-bottom: 25px !important;
-}
-
-.img-circle {
-  width: 100%;
-  max-height: 300px;
 }
