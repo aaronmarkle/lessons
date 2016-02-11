@@ -74,3 +74,8 @@ blockquote {
   margin-top: 0 !important;
   margin-bottom: 25px !important;
 }
+
+.img-circle {
+  width: 100%;
+  max-height: 300px;
+}
